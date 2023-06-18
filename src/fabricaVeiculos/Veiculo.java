@@ -8,18 +8,18 @@ import java.util.Date;
  * @author Guilherme Serafim
  *
  */
-public class Veiculo {
+public abstract class Veiculo {
     protected String marca;
     protected String cor;
     protected String modelo;
     protected Date anoDeFabrica;
     protected String tipoDeCombustivel;
-    protected Double velocidadeAtual;
-    protected Double limiteMaximo;
+    protected int velocidadeAtual;
+    protected int limiteMaximo;
 	
     // Construtor
     public Veiculo(String marca, String cor, String modelo, Date anoDeFabrica, String tipoDeCombustivel,
-			Double velocidadeAtual, Double limiteMaximo) {
+		 int velocidadeAtual, int limiteMaximo) {
 		this.marca = marca;
 		this.cor = cor;
 		this.modelo = modelo;
@@ -70,21 +70,33 @@ public class Veiculo {
 		this.tipoDeCombustivel = tipoDeCombustivel;
 	}
 
-	public Double getVelocidadeAtual() {
+	public int getVelocidadeAtual() {
 		return velocidadeAtual;
 	}
 
-	public void setVelocidadeAtual(Double velocidadeAtual) {
+	public void setVelocidadeAtual(int velocidadeAtual) {
 		this.velocidadeAtual = velocidadeAtual;
 	}
 
-	public Double getLimiteMaximo() {
+	public int getLimiteMaximo() {
 		return limiteMaximo;
 	}
 
-	public void setLimiteMaximo(Double limiteMaximo) {
+	public void setLimiteMaximo(int limiteMaximo) {
 		this.limiteMaximo = limiteMaximo;
 	}
+	
+	// Métodos abstratos
+	public abstract boolean acelerar(int qtdParaAcelerar, boolean ligadoDesligado, int velocidadeAtual);
+	
+	public abstract boolean desligar(boolean desligado, int velocidadeAtual, int limiteMaximo);
+	
+	public abstract boolean ligar(boolean ligado, int velocidadeAtual, int limiteMaximo);
+	
+	public abstract void freiar(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual);
+	
+	public abstract void mostrarDados();
+	
     
 
 }
