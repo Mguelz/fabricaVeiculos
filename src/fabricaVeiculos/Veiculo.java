@@ -8,18 +8,22 @@ import java.util.Date;
  * @author Guilherme Serafim
  *
  */
-public abstract class Veiculo {
-    protected String marca;
-    protected String cor;
-    protected String modelo;
-    protected Date anoDeFabrica;
-    protected String tipoDeCombustivel;
-    protected int velocidadeAtual;
-    protected int limiteMaximo;
-	
-    // Construtor
-    public Veiculo(String marca, String cor, String modelo, Date anoDeFabrica, String tipoDeCombustivel,
-		 int velocidadeAtual, int limiteMaximo) {
+public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombustivel, velocidadeAtual,
+								// limiteMaximo, motor, roda, transmissao
+	protected String marca;
+	protected String cor;
+	protected String modelo;
+	protected Date anoDeFabrica;
+	protected String tipoDeCombustivel;
+	protected int velocidadeAtual;
+	protected int limiteMaximo;
+	protected Motor motor;
+	protected Roda roda;
+	protected Transmissao transmissao;
+
+	// Construtor
+	public Veiculo(String marca, String cor, String modelo, Date anoDeFabrica, String tipoDeCombustivel,
+			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) {
 		this.marca = marca;
 		this.cor = cor;
 		this.modelo = modelo;
@@ -27,9 +31,12 @@ public abstract class Veiculo {
 		this.tipoDeCombustivel = tipoDeCombustivel;
 		this.velocidadeAtual = velocidadeAtual;
 		this.limiteMaximo = limiteMaximo;
+		this.motor = motor;
+		this.roda = roda;
+		this.transmissao = transmissao;
 	}
 
-    // Getters e Setters
+	// Getters e Setters
 	public String getMarca() {
 		return marca;
 	}
@@ -88,18 +95,11 @@ public abstract class Veiculo {
 	
 	// Métodos abstratos
 	public abstract boolean acelerar(int qtdParaAcelerar, boolean ligadoDesligado, int velocidadeAtual);
-	
-	public abstract boolean desligar(boolean desligado, int velocidadeAtual, int limiteMaximo);
-	
-	public abstract boolean ligar(boolean ligado, int velocidadeAtual, int limiteMaximo);
-	
-	public abstract void freiar(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual);
-	
+
+	public abstract boolean verificarSeEstaLigado(boolean valor);
+
+	public abstract void frear(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual);
+
 	public abstract void mostrarDados();
-	
-    
 
 }
-
-
-
