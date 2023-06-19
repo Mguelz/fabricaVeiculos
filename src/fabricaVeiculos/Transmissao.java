@@ -11,22 +11,22 @@ package fabricaVeiculos;
  */
 
 public class Transmissao {
-	private String tipoCombio, embreagem;
+	private String tipoCambio, embreagem;
 
 	public Transmissao() {
 	}
 
-	public Transmissao(String tipoCombio, String embreagem) {
-		this.tipoCombio = tipoCombio;
+	public Transmissao(String tipoCambio, String embreagem) {
+		this.tipoCambio = tipoCambio;
 		this.embreagem = embreagem;
 	}
 
-	public String getTipoCombio() {
-		return tipoCombio;
+	public String getTipoCambio() {
+		return tipoCambio;
 	}
 
-	public void setTipoCombio(String tipoCombio) {
-		this.tipoCombio = tipoCombio;
+	public void setTipoCambio(String tipoCambio) {
+		this.tipoCambio = tipoCambio;
 	}
 
 	public String getEmbreagem() {
@@ -37,4 +37,11 @@ public class Transmissao {
 		this.embreagem = embreagem;
 	}
 
+	@Override
+	public String toString() {
+		return "\n\nTransmissao: " + "\nTipo de cambio - "+ tipoCambio + "\nTipo de embreagem - " + embreagem;
+	}
+
+	
+	
 }

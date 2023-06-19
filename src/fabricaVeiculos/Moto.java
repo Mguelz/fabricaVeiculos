@@ -1,8 +1,5 @@
 package fabricaVeiculos;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 /**
  * 
  * @author Felipi 
@@ -15,10 +12,9 @@ import java.text.SimpleDateFormat;
 
 public class Moto extends Veiculo {
 
-	public Moto(String marca, String cor, String modelo, String anoDeFabrica, String tipoDeCombustivel,
-			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) throws ParseException {
-		super(marca, cor, modelo, anoDeFabrica, tipoDeCombustivel, velocidadeAtual, limiteMaximo, motor, roda,
-				transmissao);
+	public Moto(String marca, String cor, String modelo, String anoDeFabrica,
+			int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) {
+		super(marca, cor, modelo, anoDeFabrica, limiteMaximo, motor, roda, transmissao);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -60,10 +56,9 @@ public class Moto extends Veiculo {
 
 	@Override
 	public void mostrarDados() {
-		SimpleDateFormat format = new SimpleDateFormat();
-		String anoDeFabrica = format.format(this.anoDeFabrica);
-		System.out.println("Caminhao: " + this.getMarca() + this.getModelo() + this.getCor()
-				+ this.getTipoDeCombustivel() + anoDeFabrica +" - "+ this.getLimiteMaximo()+"Km/h");
+		System.out.println("Moto: " + this.getMarca() + " - " + this.getModelo() + " - " + this.getCor() 
+		+ " - " + this.anoDeFabrica +" - "+ this.getLimiteMaximo()+"Km/h" + motor + roda + transmissao);
+		System.out.println("\n-----------------------------------------");
 	}
 
 	@Override

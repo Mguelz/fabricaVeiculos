@@ -10,13 +10,13 @@ public class Application {
 		Roda roda1 = new Roda("Preto", "Mercedes-Benz", 4, 9, 23, 8);
 		Motor motor1 = new Motor("Om 447 La", "Gasolina comum", 12, 12, 1500);
 
-		Caminhao caminhao = new Caminhao("Mercedes-Benz", "Amarelo", "AROCS", "10/12/1000", "tipoCombustivel", 0, 106, motor1, roda1, transmissao1);
+		Caminhao caminhao = new Caminhao("Mercedes-Benz", "Amarelo", "AROCS", "2004", 106, motor1, roda1, transmissao1);
 		
 		boolean ligadoDesligado = true;
 		
 		caminhao.verificarSeEstaLigado(ligadoDesligado);
 		caminhao.acelerar(10, ligadoDesligado, caminhao.getVelocidadeAtual());
-		caminhao.acelerar(300, ligadoDesligado, caminhao.getVelocidadeAtual());
+		caminhao.acelerar(20, ligadoDesligado, caminhao.getVelocidadeAtual());
 		caminhao.frear(10, ligadoDesligado, caminhao.getVelocidadeAtual());
 		caminhao.mostrarDados();
 		
@@ -26,11 +26,11 @@ public class Application {
 		Roda roda2 = new Roda("cor", "marca", 50, 60, 12, 2);
 		Motor motor2 = new Motor("tipoMotor", "tipoGasolina", 100, 250, 225);
 
-		Carro carro = new Carro("marca", "cor", "modelo", "10/12/1000", "tipoCombustivel", 0, 300, motor2, roda2, transmissao2);
+		Carro carro = new Carro("marca", "cor", "modelo", "2010", 200, motor2, roda2, transmissao2);
 		
 		carro.verificarSeEstaLigado(ligadoDesligado);
 		carro.acelerar(10, ligadoDesligado, carro.getVelocidadeAtual());
-		carro.acelerar(300, ligadoDesligado, carro.getVelocidadeAtual());
+		carro.acelerar(150, ligadoDesligado, carro.getVelocidadeAtual());
 		carro.frear(10, ligadoDesligado, carro.getVelocidadeAtual());
 		carro.mostrarDados();
 		
@@ -40,11 +40,11 @@ public class Application {
 		Roda roda3 = new Roda("cor", "marca", 50, 60, 12, 2);
 		Motor motor3 = new Motor("tipoMotor", "tipoGasolina", 100, 250, 225);
 
-		Moto moto = new Moto("marca", "cor", "modelo", "10/12/1000", "tipoCombustivel", 0, 300, motor3, roda3, transmissao3);
+		Moto moto = new Moto("marca", "cor", "modelo", "2020", 150, motor3, roda3, transmissao3);
 		
 		moto.verificarSeEstaLigado(ligadoDesligado);
 		moto.acelerar(10, ligadoDesligado, moto.getVelocidadeAtual());
-		moto.acelerar(300, ligadoDesligado, moto.getVelocidadeAtual());
+		moto.acelerar(140, ligadoDesligado, moto.getVelocidadeAtual());
 		moto.frear(10, ligadoDesligado, moto.getVelocidadeAtual());
 		moto.mostrarDados();
 		
