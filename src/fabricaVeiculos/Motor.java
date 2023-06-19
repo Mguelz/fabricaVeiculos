@@ -2,9 +2,14 @@ package fabricaVeiculos;
 
 /**
  * 
- * @author Miguel
+ * @author Felipi 
+ * @author Guilherme 
+ * @author Ikram
+ * @author Isabelle
+ * @author Miguel 
  *
  */
+
 public class Motor {
 	private String tipoMotor, tipoCombustivel, potencia;
 	private int qtdLitros, cilindrada, torque;
@@ -12,10 +17,9 @@ public class Motor {
 	public Motor() {
 	}
 
-	public Motor(String tipoMotor, String tipoCombustivel, String potencia, int qtdLitros, int cilindrada, int torque) {
+	public Motor(String tipoMotor, String tipoCombustivel, int qtdLitros, int cilindrada, int torque) {
 		this.tipoMotor = tipoMotor;
 		this.tipoCombustivel = tipoCombustivel;
-		this.potencia = potencia;
 		this.qtdLitros = qtdLitros;
 		this.cilindrada = cilindrada;
 		this.torque = torque;

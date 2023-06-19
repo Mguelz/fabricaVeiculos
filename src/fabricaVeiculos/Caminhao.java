@@ -1,17 +1,23 @@
 package fabricaVeiculos;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  * 
- * @author Felipe
+ * @author Felipi
+ * @author Guilherme
  * @author Ikram
+ * @author Isabelle
+ * @author Miguel
  *
  */
+
 public class Caminhao extends Veiculo {
 
-	public Caminhao(String marca, String cor, String modelo, Date anoDeFabrica, String tipoDeCombustivel,
-			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) {
+	public Caminhao(String marca, String cor, String modelo, String anoDeFabrica, String tipoDeCombustivel,
+			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao)
+			throws ParseException {
 
 		super(marca, cor, modelo, anoDeFabrica, tipoDeCombustivel, velocidadeAtual, limiteMaximo, motor, roda,
 				transmissao);
@@ -38,14 +44,27 @@ public class Caminhao extends Veiculo {
 
 	@Override
 	public void frear(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual) {
-		// TODO Auto-generated method stub
+		int velocidadeDesejada = this.velocidadeAtual - qtdParaFrear;
+		if (ligadoDesligado == true && velocidadeDesejada > 0) {
+			velocidadeAtual = velocidadeDesejada;
+			System.out.println("");
+			System.out.println("Freando");
+			System.out.println("Velocidade atual " + velocidadeAtual + "Km/h");
+		} else if (velocidadeDesejada < 0) {
+			System.out.println(
+					"Nao eh possivel frear mais, pois a velocidade atual do caro eh " + velocidadeAtual + "Km/h");
+		} else if (ligadoDesligado == false) {
+			System.out.println("O carro esta desligado");
+		}
 
 	}
 
 	@Override
 	public void mostrarDados() {
-		// TODO Auto-generated method stub
-
+		SimpleDateFormat format = new SimpleDateFormat();
+		String anoDeFabrica = format.format(this.anoDeFabrica);
+		System.out.println("Caminhao: " + this.getMarca() + this.getModelo() + this.getCor()
+				+ this.getTipoDeCombustivel() + anoDeFabrica + " - " + this.getLimiteMaximo() + "Km/h");
 	}
 
 	@Override
@@ -56,5 +75,12 @@ public class Caminhao extends Veiculo {
 		return false;
 	}
 
+	public void carregamento(boolean carregamento) {
+		if (carregamento == true) {
+			System.out.print("Caminhao esta carregado!");
+		} else {
+			System.out.print("Caminhao esta descarregado!");
+		}
+	}
 
 }
