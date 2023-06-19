@@ -1,9 +1,5 @@
 package fabricaVeiculos;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * 
  * @author Felipi 
@@ -19,7 +15,7 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	protected String marca;
 	protected String cor;
 	protected String modelo;
-	protected Date anoDeFabrica;
+	protected String anoDeFabrica;
 	protected String tipoDeCombustivel;
 	protected int velocidadeAtual;
 	protected int limiteMaximo;
@@ -28,16 +24,12 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	protected Transmissao transmissao;
 
 	// Construtor
-	public Veiculo(String marca, String cor, String modelo, String anoDeFabrica, String tipoDeCombustivel,
-			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao)
-			throws ParseException {
+	public Veiculo(String marca, String cor, String modelo, String anoDeFabrica,
+			int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao){
 		this.marca = marca;
 		this.cor = cor;
 		this.modelo = modelo;
-		SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
-		this.anoDeFabrica = format.parse(anoDeFabrica);
-		this.tipoDeCombustivel = tipoDeCombustivel;
-		this.velocidadeAtual = velocidadeAtual;
+		this.anoDeFabrica = anoDeFabrica;
 		this.limiteMaximo = limiteMaximo;
 		this.motor = motor;
 		this.roda = roda;
@@ -69,11 +61,11 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 		this.modelo = modelo;
 	}
 
-	public Date getAnoDeFabrica() {
+	public String getAnoDeFabrica() {
 		return anoDeFabrica;
 	}
 
-	public void setAnoDeFabrica(Date anoDeFabrica) {
+	public void setAnoDeFabrica(String anoDeFabrica) {
 		this.anoDeFabrica = anoDeFabrica;
 	}
 

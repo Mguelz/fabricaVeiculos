@@ -24,7 +24,7 @@ public class Motor {
 		this.cilindrada = cilindrada;
 		this.torque = torque;
 	}
-
+	
 	public String getTipoMotor() {
 		return tipoMotor;
 	}
@@ -73,4 +73,11 @@ public class Motor {
 		this.torque = torque;
 	}
 
+	@Override
+	public String toString() {
+		return "\n\nMotor: " + "\nTipo do motor - " + tipoMotor + "\nTipo de combustivel - " + tipoCombustivel + "\nPotencia do motor - " + potencia 
+				+ "\nQuantidade de litros - " + qtdLitros +  "\nCilindrada - " +  cilindrada +  "\nTorque - " + torque;
+	}
+	
+	
 }

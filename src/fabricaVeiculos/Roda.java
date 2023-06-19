@@ -81,4 +81,11 @@ public class Roda {
 		this.qntdRodas = qntdRodas;
 	}
 
+	@Override
+	public String toString() {
+		return "\n\nRoda: " + "\nCor - " + cor + "\nMarca - " + marca + "\nPeso suportado - " + pesoSuportado + "\nLargura - " + largura + "\nDiametro - " + diametro + "\nQuantidade de rodas - " + qntdRodas;
+	}
+
+	
+	
 }
