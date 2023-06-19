@@ -56,16 +56,5 @@ public class Caminhao extends Veiculo {
 		return false;
 	}
 
-	@Override
-	public boolean desligar(boolean desligado, int velocidadeAtual, int limiteMaximo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean ligar(boolean ligado, int velocidadeAtual, int limiteMaximo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

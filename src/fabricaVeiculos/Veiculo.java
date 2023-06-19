@@ -97,10 +97,6 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	public abstract boolean acelerar(int qtdParaAcelerar, boolean ligadoDesligado, int velocidadeAtual);
 
 	public abstract boolean verificarSeEstaLigado(boolean valor);
-	
-	public abstract boolean desligar(boolean desligado, int velocidadeAtual, int limiteMaximo);
-
-	public abstract boolean ligar(boolean ligado, int velocidadeAtual, int limiteMaximo);
 
 	public abstract void frear(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual);
 

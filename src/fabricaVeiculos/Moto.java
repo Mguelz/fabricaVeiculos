@@ -23,18 +23,6 @@ public class Moto extends Veiculo {
 	}
 
 	@Override
-	public boolean desligar(boolean desligado, int velocidadeAtual, int limiteMaximo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean ligar(boolean ligado, int velocidadeAtual, int limiteMaximo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public void frear(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual) {
 		// TODO Auto-generated method stub
 		
