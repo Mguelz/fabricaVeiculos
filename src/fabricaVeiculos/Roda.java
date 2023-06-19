@@ -2,9 +2,14 @@ package fabricaVeiculos;
 
 /**
  * 
- * @Isabelle
+ * @author Felipi 
+ * @author Guilherme 
+ * @author Ikram
+ * @author Isabelle
+ * @author Miguel 
  *
  */
+
 public class Roda {
 	
 	//Atributos

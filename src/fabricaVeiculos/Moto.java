@@ -1,42 +1,76 @@
 package fabricaVeiculos;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  * 
- * @author Felipe
+ * @author Felipi 
+ * @author Guilherme 
  * @author Ikram
+ * @author Isabelle
+ * @author Miguel 
  *
  */
+
 public class Moto extends Veiculo {
 
-	public Moto(String marca, String cor, String modelo, Date anoDeFabrica, String tipoDeCombustivel,
-			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) {
-		super(marca, cor, modelo, anoDeFabrica, tipoDeCombustivel, velocidadeAtual, limiteMaximo, motor, roda, transmissao);
+	public Moto(String marca, String cor, String modelo, String anoDeFabrica, String tipoDeCombustivel,
+			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) throws ParseException {
+		super(marca, cor, modelo, anoDeFabrica, tipoDeCombustivel, velocidadeAtual, limiteMaximo, motor, roda,
+				transmissao);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean acelerar(int qtdParaAcelerar, boolean ligadoDesligado, int velocidadeAtual) {
-		// TODO Auto-generated method stub
+		int velocidadeDesejada = this.velocidadeAtual + qtdParaAcelerar;
+		verificarSeEstaLigado(ligadoDesligado);
+		if (ligadoDesligado == true && velocidadeDesejada <= this.limiteMaximo) {
+			this.velocidadeAtual = velocidadeDesejada;
+			System.out.println("");
+			System.out.println("Acelerando...");
+			System.out.println("Velocidade atual " + this.velocidadeAtual + "Km/h");
+		} else if (ligadoDesligado == false) {
+			System.out.println("Nao eh possivel acelerar, pois o Carro esta desligado");
+		} else if (velocidadeDesejada >= this.limiteMaximo) {
+			this.velocidadeAtual = this.limiteMaximo;
+			System.out.println("Nao eh possivel acelerar, pois a velocidade maxima é " + this.limiteMaximo);
+			System.out.println("Velocidade atual " + this.limiteMaximo + "Km/h");
+		}
 		return false;
 	}
 
 	@Override
 	public void frear(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual) {
-		// TODO Auto-generated method stub
-		
+		int velocidadeDesejada = this.velocidadeAtual - qtdParaFrear;
+		if (ligadoDesligado == true && velocidadeDesejada > 0) {
+			velocidadeAtual = velocidadeDesejada;
+			System.out.println("");
+			System.out.println("Freando");
+			System.out.println("Velocidade atual " + velocidadeAtual + "Km/h");
+		} else if (velocidadeDesejada < 0) {
+			System.out.println(
+					"Nao eh possivel frear mais, pois a velocidade atual do caro eh " + velocidadeAtual + "Km/h");
+		} else if (ligadoDesligado == false) {
+			System.out.println("O carro esta desligado");
+		}
+
 	}
 
 	@Override
 	public void mostrarDados() {
-		// TODO Auto-generated method stub
-		
+		SimpleDateFormat format = new SimpleDateFormat();
+		String anoDeFabrica = format.format(this.anoDeFabrica);
+		System.out.println("Caminhao: " + this.getMarca() + this.getModelo() + this.getCor()
+				+ this.getTipoDeCombustivel() + anoDeFabrica +" - "+ this.getLimiteMaximo()+"Km/h");
 	}
 
 	@Override
 	public boolean verificarSeEstaLigado(boolean valor) {
-		// TODO Auto-generated method stub
+		if (valor == true) {
+			return true;
+		}
 		return false;
 	}
 

@@ -1,13 +1,19 @@
 package fabricaVeiculos;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * 
- * 
- * @author Guilherme Serafim
+ * @author Felipi 
+ * @author Guilherme 
+ * @author Ikram
+ * @author Isabelle
+ * @author Miguel 
  *
  */
+
 public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombustivel, velocidadeAtual,
 								// limiteMaximo, motor, roda, transmissao
 	protected String marca;
@@ -22,12 +28,14 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	protected Transmissao transmissao;
 
 	// Construtor
-	public Veiculo(String marca, String cor, String modelo, Date anoDeFabrica, String tipoDeCombustivel,
-			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao) {
+	public Veiculo(String marca, String cor, String modelo, String anoDeFabrica, String tipoDeCombustivel,
+			int velocidadeAtual, int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao)
+			throws ParseException {
 		this.marca = marca;
 		this.cor = cor;
 		this.modelo = modelo;
-		this.anoDeFabrica = anoDeFabrica;
+		SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
+		this.anoDeFabrica = format.parse(anoDeFabrica);
 		this.tipoDeCombustivel = tipoDeCombustivel;
 		this.velocidadeAtual = velocidadeAtual;
 		this.limiteMaximo = limiteMaximo;
@@ -92,7 +100,7 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	public void setLimiteMaximo(int limiteMaximo) {
 		this.limiteMaximo = limiteMaximo;
 	}
-	
+
 	// Métodos abstratos
 	public abstract boolean acelerar(int qtdParaAcelerar, boolean ligadoDesligado, int velocidadeAtual);
 
@@ -101,5 +109,6 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	public abstract void frear(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual);
 
 	public abstract void mostrarDados();
+	
 
 }

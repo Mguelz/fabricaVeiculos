@@ -2,9 +2,14 @@ package fabricaVeiculos;
 
 /**
  * 
- * @author Miguel
+ * @author Felipi 
+ * @author Guilherme 
+ * @author Ikram
+ * @author Isabelle
+ * @author Miguel 
  *
  */
+
 public class Transmissao {
 	private String tipoCombio, embreagem;
 
