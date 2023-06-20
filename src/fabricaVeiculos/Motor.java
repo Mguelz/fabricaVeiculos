@@ -11,7 +11,7 @@ package fabricaVeiculos;
  */
 
 public class Motor {
-	private String tipoMotor, tipoCombustivel, potencia;
+	private String tipoMotor, tipoCombustivel;
 	private int qtdLitros, cilindrada, torque;
 
 	public Motor() {
@@ -41,14 +41,6 @@ public class Motor {
 		this.tipoCombustivel = tipoCombustivel;
 	}
 
-	public String getPotencia() {
-		return potencia;
-	}
-
-	public void setPotencia(String potencia) {
-		this.potencia = potencia;
-	}
-
 	public int getQtdLitros() {
 		return qtdLitros;
 	}
@@ -75,7 +67,7 @@ public class Motor {
 
 	@Override
 	public String toString() {
-		return "\n\nMotor: " + "\nTipo do motor - " + tipoMotor + "\nTipo de combustivel - " + tipoCombustivel + "\nPotencia do motor - " + potencia 
+		return "\n\nMotor: " + "\nTipo do motor - " + tipoMotor + "\nTipo de combustivel - " + tipoCombustivel 
 				+ "\nQuantidade de litros - " + qtdLitros +  "\nCilindrada - " +  cilindrada +  "\nTorque - " + torque;
 	}
 	
