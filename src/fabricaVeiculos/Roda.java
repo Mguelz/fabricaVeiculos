@@ -14,7 +14,7 @@ public class Roda {
 	
 	//Atributos
 	private String cor, marca;
-	private double pesoSuportado, largura, diametro;
+	private double pesoSuportado, larguraRodaDianteira, larguraRodaTraseira;
 	private int qntdRodas;
 	
 	//Construtor vazio
@@ -23,14 +23,14 @@ public class Roda {
 	}
 	
 	//Construtor
-	public Roda(String cor, String marca, double pesoSuportado, double largura, double diametro, int qntdRodas) {
-		this.cor = cor;
-		this.marca = marca;
-		this.pesoSuportado = pesoSuportado;
-		this.largura = largura;
-		this.diametro = diametro;
-		this.qntdRodas = qntdRodas;
-	}
+		public Roda(String cor, String marca, double pesoSuportado, int qntdRodas, double larguraRodaDianteira, double larguraRodaTraseira) {
+			this.cor = cor;
+			this.marca = marca;
+			this.pesoSuportado = pesoSuportado;
+			this.qntdRodas = qntdRodas;
+			this.larguraRodaDianteira = larguraRodaDianteira;
+			this.larguraRodaTraseira = larguraRodaTraseira;
+		}
 
 	//Getters/setters
 	public String getCor() {
@@ -57,22 +57,6 @@ public class Roda {
 		this.pesoSuportado = pesoSuportado;
 	}
 
-	public double getLargura() {
-		return largura;
-	}
-
-	public void setLargura(double largura) {
-		this.largura = largura;
-	}
-
-	public double getDiametro() {
-		return diametro;
-	}
-
-	public void setDiametro(double diametro) {
-		this.diametro = diametro;
-	}
-
 	public int getQntdRodas() {
 		return qntdRodas;
 	}
@@ -81,9 +65,25 @@ public class Roda {
 		this.qntdRodas = qntdRodas;
 	}
 
+	public double getRodaDianteira() {
+		return larguraRodaDianteira;
+	}
+
+	public void setRodaDianteira(double larguraRodaDianteira) {
+		this.larguraRodaDianteira = larguraRodaDianteira;
+	}
+
+	public double getRodaTraseira() {
+		return larguraRodaTraseira;
+	}
+
+	public void setRodaTraseira(double larguraRodaTraseira) {
+		this.larguraRodaTraseira = larguraRodaTraseira;
+	}
+
 	@Override
 	public String toString() {
-		return "\n\nRoda: " + "\nCor - " + cor + "\nMarca - " + marca + "\nPeso suportado - " + pesoSuportado + "\nLargura - " + largura + "\nDiametro - " + diametro + "\nQuantidade de rodas - " + qntdRodas;
+		return "\n\nRoda: " + "\nCor - " + cor + "\nMarca - " + marca + "\nPeso suportado - " + pesoSuportado + "\nQuantidade de rodas - " + qntdRodas + "\nLargura da roda dianteira - " + larguraRodaDianteira + "\nLargura da roda traseira - " + larguraRodaTraseira;
 	}
 
 	

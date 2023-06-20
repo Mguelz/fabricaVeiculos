@@ -17,7 +17,7 @@ public abstract class Veiculo {
 	protected String anoDeFabrica;
 	protected String tipoDeCombustivel;
 	protected int velocidadeAtual;
-	protected int limiteMaximo;
+	protected int velocidadeMaxima;
 	protected Motor motor;
 	protected Roda roda;
 	protected Transmissao transmissao;
@@ -29,7 +29,7 @@ public abstract class Veiculo {
 		this.cor = cor;
 		this.modelo = modelo;
 		this.anoDeFabrica = anoDeFabrica;
-		this.limiteMaximo = limiteMaximo;
+		this.velocidadeMaxima = limiteMaximo;
 		this.motor = motor;
 		this.roda = roda;
 		this.transmissao = transmissao;
@@ -85,11 +85,11 @@ public abstract class Veiculo {
 	}
 
 	public int getLimiteMaximo() {
-		return limiteMaximo;
+		return velocidadeMaxima;
 	}
 
 	public void setLimiteMaximo(int limiteMaximo) {
-		this.limiteMaximo = limiteMaximo;
+		this.velocidadeMaxima = limiteMaximo;
 	}
 
 	// Métodos abstratos
