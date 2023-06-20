@@ -2,16 +2,15 @@ package fabricaVeiculos;
 
 /**
  * 
- * @author Felipi 
- * @author Guilherme 
+ * @author Felipi
+ * @author Guilherme
  * @author Ikram
  * @author Isabelle
- * @author Miguel 
+ * @author Miguel
  *
  */
 
-public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombustivel, velocidadeAtual,
-								// limiteMaximo, motor, roda, transmissao
+public abstract class Veiculo {
 	protected String marca;
 	protected String cor;
 	protected String modelo;
@@ -24,8 +23,8 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	protected Transmissao transmissao;
 
 	// Construtor
-	public Veiculo(String marca, String cor, String modelo, String anoDeFabrica,
-			int limiteMaximo, Motor motor, Roda roda, Transmissao transmissao){
+	public Veiculo(String marca, String cor, String modelo, String anoDeFabrica, int limiteMaximo, Motor motor,
+			Roda roda, Transmissao transmissao) {
 		this.marca = marca;
 		this.cor = cor;
 		this.modelo = modelo;
@@ -101,6 +100,5 @@ public abstract class Veiculo { // marca, cor, modelo, anoDeFabrica, tipoDeCombu
 	public abstract void frear(int qtdParaFrear, boolean ligadoDesligado, int velocidadeAtual);
 
 	public abstract void mostrarDados();
-	
 
 }

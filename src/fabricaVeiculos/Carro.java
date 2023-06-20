@@ -22,17 +22,19 @@ public class Carro extends Veiculo {
 	public boolean acelerar(int qtdParaAcelerar, boolean ligadoDesligado, int velocidadeAtual) {
 		int velocidadeDesejada = this.velocidadeAtual + qtdParaAcelerar;
 		verificarSeEstaLigado(ligadoDesligado);
-		if (ligadoDesligado == true && velocidadeDesejada <= this.limiteMaximo) {
+		if (ligadoDesligado == true && velocidadeDesejada <= this.limiteMaximo && qtdParaAcelerar > 0) {
 			this.velocidadeAtual = velocidadeDesejada;
 			System.out.println("");
 			System.out.println("Acelerando...");
 			System.out.println("Velocidade atual " + this.velocidadeAtual + "Km/h");
 		} else if (ligadoDesligado == false) {
-			System.out.println("Nao eh possivel acelerar, pois o Carro esta desligado");
+			System.err.println("Nao eh possivel acelerar, pois o Carro esta desligado");
 		} else if (velocidadeDesejada >= this.limiteMaximo) {
 			this.velocidadeAtual = this.limiteMaximo;
-			System.out.println("Nao eh possivel acelerar, pois a velocidade maxima é " + this.limiteMaximo);
-			System.out.println("Velocidade atual " + this.limiteMaximo + "Km/h");
+			System.err.println("Nao eh possivel acelerar, pois a velocidade maxima é " + this.limiteMaximo);
+			System.err.println("Velocidade atual " + this.limiteMaximo + "Km/h");
+		} else {
+			System.err.println("A quantidade de voce deseja acelerar nao eh valida");
 		}
 		return false;
 	}
@@ -46,10 +48,10 @@ public class Carro extends Veiculo {
 			System.out.println("Freando");
 			System.out.println("Velocidade atual " + velocidadeAtual + "Km/h");
 		} else if (velocidadeDesejada < 0) {
-			System.out.println(
+			System.err.println(
 					"Nao eh possivel frear mais, pois a velocidade atual do caro eh " + velocidadeAtual + "Km/h");
 		} else if (ligadoDesligado == false) {
-			System.out.println("O carro esta desligado");
+			System.err.println("O carro esta desligado");
 		}
 
 	}
